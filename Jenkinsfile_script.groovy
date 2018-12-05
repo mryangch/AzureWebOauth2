@@ -10,7 +10,7 @@ node {
     }
     stage('Archive') {
         echo 'Run test cases...'
-        archive 'AzureWebOAuth2/bin/Release/**'
+        archiveArtifacts 'AzureWebOAuth2/bin/Release/**'
     }
     stage('Deploy') {
         echo 'Deploy package...'
