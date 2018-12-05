@@ -6,6 +6,7 @@ node {
     stage('Build') {
         echo 'Build project...'
         //bat 'dotnet restore AzureWebOAuth2.sln'
+	bat "\"${tool 'msbuild15.0'}\" AzureWebOAuth2.sln /t:Restore"
 	bat "\"${tool 'msbuild15.0'}\" AzureWebOAuth2.sln /p:Configuration=Release /p:Platform=\"Any CPU\""
     }
     stage('Archive') {
